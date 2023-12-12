@@ -30,8 +30,6 @@ const YourComponent: React.FC = () => {
       <div className='max-w-[1080px] mx-auto shadow-xl rounded-lg '>
         <CardComponet />
       </div>
-
-
     </div>
   );
 };

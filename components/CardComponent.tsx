@@ -35,10 +35,9 @@ const getRandomImage = () => {
 
 const CardComponet = () => {
 
-  const [trips, setTrips] = useState<Trip[]>(() => {
-    const storedTrips = localStorage.getItem('trips');
-    return storedTrips ? JSON.parse(storedTrips) : [];
-  });
+    const [trips, setTrips] = useState<Trip[]>([]);
+      
+
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => {
@@ -74,7 +73,6 @@ const CardComponet = () => {
     const updatedTrips = [...trips, { ...newTrip, image: randomImage }];
     setTrips(updatedTrips);
     localStorage.setItem('trips', JSON.stringify(updatedTrips));
-    // Store the random image URL in local storage
     localStorage.setItem(`image_${updatedTrips.length - 1}`, randomImage);
   };
 
